@@ -11,7 +11,7 @@ const dbUrl = process.env.MONGODB_URI;
 // Enable CORS
 app.use(
     cors({
-      origin: "http://localhost:5173", // React app ka URL
+      origin: ["http://localhost:5173","https://grocery-list-frontend.vercel.app"], // React app ka URL
     })
   );
 
