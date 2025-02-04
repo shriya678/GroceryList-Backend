@@ -1,11 +1,13 @@
-
+import * as dotenv from 'dotenv';
+dotenv.config();
 import express from "express";
 const app = express();
 import mongoose from "mongoose";
 import groceryItemRoutes from "./routes/groceryItemRoutes.js"
 import cors from "cors";
 
-const dbUrl= "mongodb+srv://grocerydb:grocerydb04@cluster0.y4q5e.mongodb.net/grocery?retryWrites=true&w=majority&appName=Cluster0";
+
+const dbUrl = process.env.MONGODB_URI;
 // Enable CORS
 app.use(
     cors({
