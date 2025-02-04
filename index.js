@@ -1,10 +1,11 @@
+
 import express from "express";
 const app = express();
 import mongoose from "mongoose";
 import groceryItemRoutes from "./routes/groceryItemRoutes.js"
 import cors from "cors";
 
-const dbUrl= "mongodb://127.0.0.1:27017/grocery";
+const dbUrl= "mongodb+srv://grocerydb:grocerydb04@cluster0.y4q5e.mongodb.net/grocery?retryWrites=true&w=majority&appName=Cluster0";
 // Enable CORS
 app.use(
     cors({
@@ -20,7 +21,7 @@ main().then(()=>{
 
 
 async function main(){
-    await mongoose.connect(dbUrl);
+    await mongoose.connect(dbUrl,{useNewUrlParser:true});
 }
 
 app.use(express.json());
