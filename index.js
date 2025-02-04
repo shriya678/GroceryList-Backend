@@ -28,6 +28,8 @@ async function main(){
 
 app.use(express.json());
 app.use("/api/",groceryItemRoutes);
-app.listen(8080,()=>{
+const port = process.env.PORT || 8080;
+
+app.listen(port, () =>{
     console.log("server is listening on port 8080");
 })
